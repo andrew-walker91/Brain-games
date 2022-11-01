@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import userName from '../src/cli.js';
-import gameIsEven from './brain-even.js';
+import brainEven from '../src/games/even.js';
 
 console.log(`Hello, ${userName}!`);
 
-gameIsEven();
+brainEven();
