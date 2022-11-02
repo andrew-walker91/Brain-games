@@ -21,7 +21,7 @@ const getGameData = () => {
     const firstNum = getRandomNumber(1, 10);
     const secondNum = getRandomNumber(1, 10);
     const operator = getRandomOperator();
-    const question = `${firstNum} ${operator} ${secondNum}`;
+    const question = `Question: ${firstNum} ${operator} ${secondNum}`;
     const expectedAnswer = calculate(firstNum, secondNum, operator);
     gameData.push([question, String(expectedAnswer)]);
   }

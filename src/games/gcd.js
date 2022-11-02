@@ -21,7 +21,7 @@ const getGameData = () => {
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNum = getRandomNumber(1, 50);
     const secondNum = getRandomNumber(1, 50);
-    const question = `${firstNum} ${secondNum}`;
+    const question = `Question: ${firstNum} ${secondNum}`;
     const expectedAnswer = getGreatestCommonDivisor(firstNum, secondNum);
     gameData.push([question, String(expectedAnswer)]);
   }
