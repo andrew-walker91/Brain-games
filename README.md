@@ -4,7 +4,7 @@
 # Brain Games
 
 
-Hello! My name is Andrey Gulayakin and this is my first **frontend** project on [Hexlet](hexlet.io/).
+Hello! My name is Andrey Gulayakin and this is my first **frontend** project on [Hexlet](https://ru.hexlet.io/pages/about).
 
 
 ## Installation:
@@ -19,7 +19,7 @@ Clone this repository on your machine in the project directory.
 
 `npm link`
 
-Implied that you have already installed Node.js 13+ 🤓
+Implied that you have already installed **Node.js 13+** 🤓
 
 
 ## How to play:
