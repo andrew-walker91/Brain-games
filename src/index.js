@@ -1,15 +1,15 @@
 import readlineSync from 'readline-sync';
+import greeting from './cli.js';
 
 export const numberOfRounds = 3;
-
-export const gameLogic = (task, gameData) => {
-  console.log('Welcome to the Brain Games!');
+export const getGameLogic = (task, getGameData) => {
+  greeting();
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(task);
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const [question, expectedAnswer] = gameData[i];
-    console.log(question);
+    const [question, expectedAnswer] = getGameData[i];
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === expectedAnswer) {
       console.log('Correct!');
