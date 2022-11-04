@@ -2,9 +2,10 @@
 <a href="https://codeclimate.com/github/andrew-walker91/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/7322ad8b044340756c23/maintainability" /></a>
 
 # Brain Games
-
-
 Hello! My name is Andrey Gulayakin and this is my first **frontend** project on [Hexlet](https://ru.hexlet.io/pages/about).
+
+![math meme](https://memepedia.ru/wp-content/uploads/2017/05/blondlady-1.jpg)
+
 
 
 ## Installation:
