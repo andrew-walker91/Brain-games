@@ -1,7 +1,7 @@
-import { getRandomNumber } from '../randomizer.js';
-import { numberOfRounds, gameLogic } from '../index.js';
+import getRandomNumber from '../randomizer.js';
+import { numberOfRounds, getGameLogic } from '../index.js';
 
-const getArithmeticProgression = (start, step, length) => {
+const getArithmeticProg = (start, step, length) => {
   const result = [];
   for (let i = 0; i < length; i += 1) {
     result.push(start + (i * step));
@@ -13,19 +13,18 @@ const task = 'What number is missing in the progression?';
 const getGameData = () => {
   const gameData = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const progressionStart = getRandomNumber(5, 10);
-    const progressionStep = getRandomNumber(3, 9);
-    const progressionLength = getRandomNumber(5, 10);
-    // eslint-disable-next-line max-len
-    const progression = getArithmeticProgression(progressionStart, progressionStep, progressionLength);
-    const hiddenIndex = getRandomNumber(0, progression.length - 1);
-    const expectedAnswer = progression[hiddenIndex];
-    progression[hiddenIndex] = '..';
-    const modifiedProgression = progression.join(' ');
-    const question = `Question: ${modifiedProgression}`;
+    const randomStartPointOfProg = getRandomNumber(5, 10);
+    const randomStepOfProg = getRandomNumber(3, 9);
+    const randomProgLength = getRandomNumber(5, 10);
+    const prog = getArithmeticProg(randomStartPointOfProg, randomStepOfProg, randomProgLength);
+    const randomHiddenIndexOfProg = getRandomNumber(0, prog.length - 1);
+    const expectedAnswer = prog[randomHiddenIndexOfProg];
+    prog[randomHiddenIndexOfProg] = '..';
+    const modifiedProgression = prog.join(' ');
+    const question = `${modifiedProgression}`;
     gameData.push([question, String(expectedAnswer)]);
   }
   return gameData;
 };
 
-export default () => gameLogic(task, getGameData());
+export default () => getGameLogic(task, getGameData());
