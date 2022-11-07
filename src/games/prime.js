@@ -1,5 +1,7 @@
 import getRandomNumber from '../randomizer.js';
-import { numberOfRounds, getGameLogic } from '../index.js';
+import getGameLogic from '../index.js';
+
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
@@ -10,16 +12,10 @@ const isPrime = (number) => {
   return number > 1;
 };
 
-const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const getGameData = () => {
-  const gameData = [];
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    const gameNum = getRandomNumber(1, 200);
-    const question = `${gameNum}`;
-    const expectedAnswer = isPrime(gameNum) ? 'yes' : 'no';
-    gameData.push([question, expectedAnswer]);
-  }
-  return gameData;
+const getGameRound = () => {
+  const question = getRandomNumber(1, 200);
+  const expectedAnswer = isPrime(question) ? 'yes' : 'no';
+  return [question, expectedAnswer];
 };
 
-export default () => getGameLogic(task, getGameData());
+export default () => getGameLogic(task, getGameRound);

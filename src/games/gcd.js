@@ -1,5 +1,7 @@
 import getRandomNumber from '../randomizer.js';
-import { numberOfRounds, getGameLogic } from '../index.js';
+import getGameLogic from '../index.js';
+
+const task = 'Find the greatest common divisor of given numbers.';
 
 const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
   let x = firstNumber;
@@ -15,17 +17,12 @@ const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
   return x + y;
 };
 
-const task = 'Find the greatest common divisor of given numbers.';
-const getGameData = () => {
-  const gameData = [];
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    const gameNum1 = getRandomNumber(1, 50);
-    const gameNum2 = getRandomNumber(1, 50);
-    const question = `${gameNum1} ${gameNum2}`;
-    const expectedAnswer = getGreatestCommonDivisor(gameNum1, gameNum2);
-    gameData.push([question, String(expectedAnswer)]);
-  }
-  return gameData;
+const getGameRound = () => {
+  const gameNum1 = getRandomNumber(1, 50);
+  const gameNum2 = getRandomNumber(1, 50);
+  const question = `${gameNum1} ${gameNum2}`;
+  const expectedAnswer = getGreatestCommonDivisor(gameNum1, gameNum2);
+  return [question, String(expectedAnswer)];
 };
 
-export default () => getGameLogic(task, getGameData());
+export default () => getGameLogic(task, getGameRound);
