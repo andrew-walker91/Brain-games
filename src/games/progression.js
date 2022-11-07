@@ -13,15 +13,15 @@ const task = 'What number is missing in the progression?';
 const getGameData = () => {
   const gameData = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const randomStartPointOfProg = getRandomNumber(5, 10);
-    const randomStepOfProg = getRandomNumber(3, 9);
-    const randomProgLength = getRandomNumber(5, 10);
-    const prog = getArithmeticProg(randomStartPointOfProg, randomStepOfProg, randomProgLength);
-    const randomHiddenIndexOfProg = getRandomNumber(0, prog.length - 1);
-    const expectedAnswer = prog[randomHiddenIndexOfProg];
-    prog[randomHiddenIndexOfProg] = '..';
-    const modifiedProgression = prog.join(' ');
-    const question = `${modifiedProgression}`;
+    const progStart = getRandomNumber(5, 10);
+    const progStep = getRandomNumber(3, 9);
+    const progLength = getRandomNumber(5, 10);
+    const prog = getArithmeticProg(progStart, progStep, progLength);
+    const progHiddenIndex = getRandomNumber(0, prog.length - 1);
+    const expectedAnswer = prog[progHiddenIndex];
+    prog[progHiddenIndex] = '..';
+    const modifiedProg = prog.join(' ');
+    const question = `${modifiedProg}`;
     gameData.push([question, String(expectedAnswer)]);
   }
   return gameData;

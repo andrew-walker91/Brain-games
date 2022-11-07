@@ -14,9 +14,9 @@ const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const getGameData = () => {
   const gameData = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const randomNumber = getRandomNumber(1, 200);
-    const question = `${randomNumber}`;
-    const expectedAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+    const gameNum = getRandomNumber(1, 200);
+    const question = `${gameNum}`;
+    const expectedAnswer = isPrime(gameNum) ? 'yes' : 'no';
     gameData.push([question, expectedAnswer]);
   }
   return gameData;

@@ -19,10 +19,10 @@ const task = 'Find the greatest common divisor of given numbers.';
 const getGameData = () => {
   const gameData = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const randomNum1 = getRandomNumber(1, 50);
-    const randomNum2 = getRandomNumber(1, 50);
-    const question = `${randomNum1} ${randomNum2}`;
-    const expectedAnswer = getGreatestCommonDivisor(randomNum1, randomNum2);
+    const gameNum1 = getRandomNumber(1, 50);
+    const gameNum2 = getRandomNumber(1, 50);
+    const question = `${gameNum1} ${gameNum2}`;
+    const expectedAnswer = getGreatestCommonDivisor(gameNum1, gameNum2);
     gameData.push([question, String(expectedAnswer)]);
   }
   return gameData;
