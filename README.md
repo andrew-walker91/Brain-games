@@ -10,18 +10,12 @@ Hello! My name is Andrey Gulyaykin and this is my first **frontend** project on 
 
 ## Installation:
 
-
-
-Clone this repository on your machine in the project directory.
-
-`git clone git@github.com:andrew-walker91/frontend-project-44.git`
-
-`make install`
-
-`npm link`
-
-Implied that you have already installed **Node.js 13+** 🤓
-
+Just 3 commands for a quick start
+```
+git clone git@github.com:andrew-walker91/Brain-games
+make install
+npm link
+```
 
 ## How to play:
 
